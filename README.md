@@ -44,9 +44,16 @@ First setup your machine or your teammate's machine to be the self hosted runner
 Answer the following questions:
 
 1. What does the __runs-on__ string  
-Answer: runs-on in github actions yml file is used to specify the destination runner which can either be self hosted or on cloud. runs-on expects either the machine label or group membership, or a combination of these. The value can be specified as a single string or list of strings for multiple runners.
+
+Answer: runs-on in github actions yml file is used to specify the destination runner which can either be self hosted or on cloud. runs-on expects either the machine label or group membership, or a combination of these. The value can be specified as a single string or list of strings for multiple runners. In this case, cs5500-self-hosted indicates that the job will run on a self-hosted runner with this label.
+
 2. In `main.yml`, on which branch do the jest tests run when a push to main branch is made?
+
+Answer: Jest tests run on the main branch when a push is made to the main branch. The actions/checkout@v3 action ensures that the code checked out to the runner is from the main branch
+
 3. In `main.yml`, on which branch do the jest tests run when a pull request is submitted to the deploy branch?
+
+Answer: Jest tests run on the source branch (in our example, main) of the pull request when the pull request targets the deploy branch. The actions/checkout@v3 action ensures that the code checked out to the runner is from the source branch (in our example, main) of the pull request
 
 Next, create a new workflow yml file that captures the following continuous integration requirement:
 
