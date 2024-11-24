@@ -44,6 +44,7 @@ First setup your machine or your teammate's machine to be the self hosted runner
 Answer the following questions:
 
 1. What does the __runs-on__ string  
+Answer: runs-on in github actions yml file is used to specify the destination runner which can either be self hosted or on cloud. runs-on expects either the machine label or group membership, or a combination of these. The value can be specified as a single string or list of strings for multiple runners.
 2. In `main.yml`, on which branch do the jest tests run when a push to main branch is made?
 3. In `main.yml`, on which branch do the jest tests run when a pull request is submitted to the deploy branch?
 
